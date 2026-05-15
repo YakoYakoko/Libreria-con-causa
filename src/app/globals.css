@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  
+  /* Vibrant Purple/Indigo as primary */
+  --primary: #6366f1;
+  --primary-foreground: #ffffff;
+  
+  /* Pink/Rose as secondary */
+  --secondary: #ec4899;
+  --secondary-foreground: #ffffff;
+  
+  /* Amber as accent */
+  --accent: #f59e0b;
+  --accent-foreground: #ffffff;
+  
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  
+  --border: #e2e8f0;
+}
+
+.dark {
+  --background: #09090b;
+  --foreground: #fafafa;
+  
+  --primary: #818cf8;
+  --primary-foreground: #ffffff;
+  
+  --secondary: #f472b6;
+  --secondary-foreground: #ffffff;
+  
+  --accent: #fbbf24;
+  --accent-foreground: #09090b;
+  
+  --card: #18181b;
+  --card-foreground: #fafafa;
+  
+  --border: #27272a;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base styles for smooth transitions */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Glassmorphism utility classes */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass {
+  background: rgba(24, 24, 27, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.dark .glass-card {
+  background: rgba(24, 24, 27, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
